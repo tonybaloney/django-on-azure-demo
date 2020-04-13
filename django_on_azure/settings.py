@@ -159,3 +159,28 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'demo', 'static')
 ]
+
+APPLICATION_INSIGHTS = {
+    # Your Application Insights instrumentation key
+    'ikey': os.environ.get('INSIGHTS_KEY', "00000000-0000-0000-0000-000000000000"),
+    'use_view_name': True,
+    'record_view_arguments': True,
+}
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        # The application insights handler is here
+        'appinsights': {
+            'class': 'applicationinsights.django.LoggingHandler',
+            'level': 'WARNING'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['appinsights'],
+            'level': 'WARNING',
+            'propagate': True,
+        }
+    }
+}
