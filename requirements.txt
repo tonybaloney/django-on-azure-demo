@@ -1,4 +1,4 @@
-django==3.1.10
+django==3.1.12
 django-storages[azure]==1.9.1
 psycopg2-binary==2.8.4
 uvicorn==0.11.7
