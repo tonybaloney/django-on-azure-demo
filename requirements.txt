@@ -1,6 +1,6 @@
 django==3.2.20
 django-storages[azure]==1.9.1
 psycopg2-binary==2.8.4
-uvicorn==0.11.7
+uvicorn==0.12.3
 applicationinsights==0.11.9
 websockets>=9.1 # not directly required, pinned by Snyk to avoid a vulnerability
